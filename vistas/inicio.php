@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>inicio</title>
+	<title>Inicio</title>
+	
 	<?php require_once "menu.php"; ?>
 </head>
 <body>

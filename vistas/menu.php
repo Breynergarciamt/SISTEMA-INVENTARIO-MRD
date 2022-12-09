@@ -4,9 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="img/128.png" type="PNG" sizes="16px">
   <title></title>
 </head>
-<body>
+
+<body >
 
   <!-- Begin Navbar -->
   <div id="nav">
@@ -19,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/ventas.jpg" alt="" width="150px" height="150px"></a>
+          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/logo.png" alt="" width="125px" height="125px"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
 
@@ -31,10 +33,11 @@
             
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list-alt"></span> Administrar Articulos <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list-alt"></span> Productos y Categorias <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="categorias.php">Categorias</a></li>
-              <li><a href="articulos.php">Articulos</a></li>
+            
+            <li> <a href="categorias.php" <span class="input-group-addon"><i class="glyphicon glyphicon-equalizer"></i></span>&nbsp&nbsp&nbsp&nbspCategorias</a></li>
+            <li><a href="articulos.php"<span class="input-group-addon"><i class="glyphicon glyphicon-shopping-cart"></i></span>&nbsp&nbsp&nbsp&nbspProductos</a></li>
             </ul>
           </li>
 
@@ -51,13 +54,13 @@
 
            <li><a href="clientes.php"><span class="glyphicon glyphicon-user"></span> Clientes</a>
           </li>
-          <li><a href="ventas.php"><span class="glyphicon glyphicon-usd"></span> Vender Articulo</a>
+          <li><a href="ventas.php"><span class="glyphicon glyphicon-usd"></span> Vender Productos</a>
           </li>
           
           <li class="dropdown" >
             <a href="#" style="color: red"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['usuario']; ?>  <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li> <a style="color: red" href="../procesos/salir.php"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
+              <li> <a style="color: red" href="../procesos/salir.php"><span class="glyphicon glyphicon-off"></span> Cerrar sesion</a></li>
               
             </ul>
           </li>

@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario'])){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>categorias</title>
+		<title>Categorias</title>
 		<?php require_once "menu.php"; ?>
 	</head>
 	<body>
@@ -18,10 +18,10 @@ if(isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmCategorias">
-						<label>Categoria</label>
-						<input type="text" class="form-control input-sm" name="categoria" id="categoria">
+						<label>Categoria:</label>
+						<input type="text" class="form-control input-sm" name="categoria" id="categoria" placeholder="Ingrese categoria">
 						<p></p>
-						<span class="btn btn-primary" id="btnAgregaCategoria">Agregar</span>
+						<span class="btn btn-primary" id="btnAgregaCategoria">Agregar cagegoria</span>
 					</form>
 				</div>
 				<div class="col-sm-6">
@@ -69,7 +69,7 @@ if(isset($_SESSION['usuario'])){
 				vacios=validarFormVacio('frmCategorias');
 
 				if(vacios > 0){
-					alertify.alert("Debes llenar todos los campos!!");
+					alertify.alert("¡Debes completar todos los campos!");
 					return false;
 				}
 
@@ -84,9 +84,9 @@ if(isset($_SESSION['usuario'])){
 					$('#frmCategorias')[0].reset();
 
 					$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
-					alertify.success("Categoria agregada con exito :D");
+					alertify.success("¡Categoria agregada correctamente!");
 				}else{
-					alertify.error("No se pudo agregar categoria");
+					alertify.error("¡Error al agregar categoria!");
 				}
 			}
 		});
@@ -106,9 +106,9 @@ if(isset($_SESSION['usuario'])){
 					success:function(r){
 						if(r==1){
 							$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
-							alertify.success("Actualizado con exito :)");
+							alertify.success("¡Actualizado correctamente!");
 						}else{
-							alertify.error("no se pudo actaulizar :(");
+							alertify.error("¡Error al actualizar!");
 						}
 					}
 				});
@@ -122,23 +122,23 @@ if(isset($_SESSION['usuario'])){
 			$('#categoriaU').val(categoria);
 		}
 
-		function eliminaCategoria(idcategoria){
+		function eliminaCategoria(idCategoria){
 			alertify.confirm('¿Desea eliminar esta categoria?', function(){ 
 				$.ajax({
 					type:"POST",
-					data:"idcategoria=" + idcategoria,
+					data:"idcategoria=" + idCategoria,
 					url:"../procesos/categorias/eliminarCategoria.php",
 					success:function(r){
 						if(r==1){
 							$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
 							alertify.success("Eliminado con exito!!");
 						}else{
-							alertify.error("No se pudo eliminar :(");
+							alertify.error("¡Error al eliminar!");
 						}
 					}
 				});
 			}, function(){ 
-				alertify.error('Cancelo !')
+				alertify.error("¡Cancelo!')
 			});
 		}
 	</script>
